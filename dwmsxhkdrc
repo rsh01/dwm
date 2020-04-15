@@ -1,0 +1,112 @@
+### apps
+
+# terminal and terminal apps
+super + shift + Return
+        st
+super + shift + n
+        st -e ncmpcpp
+super + alt + w
+        st -e sudo wifi-menu
+super + e
+        st -e lfrun
+super + shift + p
+        st -e python
+super + shift + a
+        st -e alsamixer
+super + shift + v
+        st -e vit
+super + shift + c
+        st -e calcurse
+
+# web browser and bookmarks
+super + w
+        webdmenu
+
+# telegram
+super + ctrl + t
+        telegram-desktop
+
+# dictionary
+super + ctrl + d
+        dict
+super + alt + d
+        urbandict
+
+### scripts/control
+
+# power options
+super + q
+        dwmpowerops
+
+# reload sxhkd
+super + Escape
+        pkill -USR1 -x sxhkd && notify-send "sxhkd reloaded"
+
+# app launcher
+super + d
+        dmenu_run
+
+# play a youtube video link from the clipboard in mpv
+# works well with the surf browser which cannot play videos
+super + shift + y
+        ytmpv
+
+# music controls
+super + space
+        mpc toggle
+super + p
+        mpc prev
+super + n
+        mpc next
+super + r
+        mpc seek 0
+super + BackSpace
+        pactl set-sink-mute 0 toggle && notify-send "Volume muted $(ponymix get-volume)" -t 200
+super + equal
+        pactl set-sink-volume 0 +1%  && notify-send "Volume up $(ponymix get-volume)" -t 200
+super + minus
+        pactl set-sink-volume 0 -1%  && notify-send "Volume down $(ponymix get-volume)" -t 200
+
+# wallpaper controls
+super + shift + w
+        papechange
+super + ctrl + w
+        papechangesxiv
+
+# screenshot
+super + shift + s
+        screenshot
+
+# emojis and fontawesome
+super + ctrl + e
+        emojiselect
+super + alt + e
+        fontawesomeselect
+
+# create a QR code out of the text in the clipboard
+super + ctrl + q
+        pyclipqr
+
+# edit config files with dmenu
+super + ctrl + c
+        cfgdmenu
+
+# mounting and display change scripts
+super + ctrl + m
+        lukedmenuselect
+super + alt + m
+        monsselect
+super + shift + m
+        mountscript
+
+# brightness
+super + Page_Up
+        brightnessctl set 3%+ && notify-send "Brightness up"
+super + Page_Down
+        brightnessctl set 3%- && notify-send "Brightness down"
+
+# colorpicker
+super + alt + c
+        pickcolor
+
+#vim:ft=config 
