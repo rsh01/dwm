@@ -2,12 +2,13 @@
 
 /* appearance */
 static const unsigned int borderpx  = 0;        /* border pixel of windows */
+static const unsigned int gappx     = 15;        /* gaps between windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const char *fonts[]          = {
-    "JetbrainsMono:size=11",
-    "FontAwesome:size=13",
+        "JetbrainsMono:size=11",
+        "FontAwesome:size=13",
 };
 static const char dmenufont[]       = "monospace:size=10";
 static const char col_gray1[]       = "#222222";
@@ -31,7 +32,7 @@ static const Rule rules[] = {
 	 */
 	/* class      instance    title         tags mask     iscentered     isfloating   monitor */
 	{ "Gimp",     NULL,       NULL,         0,            0,             1,           -1 },
-	{ "Firefox",  NULL,       NULL,         1 << 8,       0,             0,           -1 },
+	{ "Firefox",  NULL,       NULL,         1 << 2,       0,             0,           -1 },
 	{ "Sxiv",     "sxiv",     "sxiv",       0,            1,             1,           -1 },
 	{ "St",       "st",       "alsamixer",  0,            1,             1,           -1 },
 	{ "St",       "st",       "vit",        0,            1,             1,           -1 },
@@ -39,6 +40,7 @@ static const Rule rules[] = {
 	{ "St",       "st",       "calcurse",   0,            1,             1,           -1 },
 	{ "Display",  "display",  NULL,         0,            1,             1,           -1 },
 	{ "Pcmanfm",  "pcmanfm",  NULL,         0,            1,             1,           -1 },
+	{ "mpv",      NULL,       NULL,         1 << 6,       1,             1,           -1 },
 };
 
 /* layout(s) */
@@ -78,8 +80,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_o,      incnmaster,     {.i = -1 } },
 	{ MODKEY,                       XK_h,      setmfact,       {.f = -0.05} },
 	{ MODKEY,                       XK_l,      setmfact,       {.f = +0.05} },
-	{ MODKEY,                       XK_Return, zoom,           {0} },
-	{ MODKEY,                       XK_Tab,    view,           {0} },
+	{ MODKEY,                       XK_Tab,    zoom,           {0} },
 	{ MODKEY|ShiftMask,             XK_Tab,    quit,           {0} },
 	{ MODKEY,                       XK_c,      killclient,     {0} },
 	{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },

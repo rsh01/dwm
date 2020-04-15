@@ -1,7 +1,7 @@
 ### apps
 
 # terminal and terminal apps
-super + shift + Return
+super + Return
         st
 super + shift + n
         st -e ncmpcpp
