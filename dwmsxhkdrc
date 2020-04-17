@@ -8,7 +8,7 @@ super + shift + n
 super + alt + w
         st -e sudo wifi-menu
 super + e
-        st -e lfrun
+        st -e lf
 super + shift + p
         st -e python
 super + shift + a
@@ -35,7 +35,7 @@ super + alt + d
 ### scripts/control
 
 # power options
-super + q
+super + shift + q
         dwmpowerops
 
 # reload sxhkd
@@ -47,7 +47,6 @@ super + d
         dmenu_run
 
 # play a youtube video link from the clipboard in mpv
-# works well with the surf browser which cannot play videos
 super + shift + y
         ytmpv
 
