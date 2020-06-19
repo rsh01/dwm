@@ -46,7 +46,9 @@ super + shift + y
 super + {space, p, n, r}
         mpc {toggle, prev, next, seek 0}
 super + {BackSpace, equal, minus}
-        volctl {mute, up, down}
+        volctl {mute, up 1, down 1}
+super + shift + {j, k}
+        volctl {down 10, up 10}
 
 # wallpaper controls
 super + {shift, ctrl} + w
@@ -70,7 +72,7 @@ super + ctrl + c
 
 # mounting and display change scripts
 super + {ctrl, alt, shift} + m
-        lukedmenuselect, monsselect, mountscript
+        {lukedmenuselect, monsselect, mountscript}
 
 # brightness
 super + Page_Up
