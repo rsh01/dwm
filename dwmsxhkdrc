@@ -6,11 +6,13 @@ super + Return
 super + e
         st -e lf
 super + ctrl + n
-        st -e newsboat
+        st -g 84x32 -e newsboat
 super + shift + {n, p, a, v, c, e}
         st -e {ncmpcpp, python, alsamixer, vit, calcurse, neomutt}
 super + alt + w
         st -e sudo wifi-menu
+super + ctrl + h
+        st -e htop
 
 # web browser and bookmarks
 super + w
@@ -22,7 +24,7 @@ super + ctrl + t
 
 # dictionary
 super + {ctrl, alt} + d
-        {dict, urbandict}
+        {dictnotify, urbandict}
 
 ### scripts/control
 
@@ -83,5 +85,8 @@ super + Page_Down
 # colorpicker
 super + alt + c
         pickcolor
+
+super + ctrl + p
+        passmenu
 
 #vim:ft=config 
