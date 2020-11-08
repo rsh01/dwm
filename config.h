@@ -2,23 +2,21 @@
 
 /* appearance */
 static const unsigned int borderpx  = 1;        /* border pixel of windows */
-static const unsigned int gappx     = 10;        /* gaps between windows */
+static const unsigned int gappx     = 0;        /* gaps between windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const char *fonts[]          = {
-	"xos4 Terminus:size=12",
-	/* "Iosevka:size=12", */
+		"Terminus (TTF):size=12",
         "FontAwesome:size=14",
         "JoyPixels:pixelsize=10:antialias=true:autohint=true",
 };
 static const char dmenufont[]       = "monospace:size=10";
-static const char col_gray1[]       = "#2E3440";
-/* static const char col_gray1[]       = "#344654"; */
+static const char col_gray1[]       = "#222222";
 static const char col_gray2[]       = "#444444";
 static const char col_gray3[]       = "#bbbbbb";
 static const char col_gray4[]       = "#eeeeee";
-static const char col_cyan[]        = "#354755";
+static const char col_cyan[]        = "#005577";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
@@ -26,7 +24,7 @@ static const char *colors[][3]      = {
 };
 
 /* tagging */
-static const char *tags[] = { "α", "β", "γ", "δ", "ε", "ζ", "η", "θ" };
+static const char *tags[] = { "α", "β", "γ", "δ", "θ" };
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -44,7 +42,6 @@ static const Rule rules[] = {
 	{ "Display",  "display",  NULL,         0,            1,             1,           -1 },
 	{ "Pcmanfm",  "pcmanfm",  NULL,         0,            1,             1,           -1 },
 	{ "mpv",      NULL,       NULL,         0,            0,             1,           -1 },
-	{ "St",       "st",       "newsboat",   0,            1,             1,           -1 },
 };
 
 /* layout(s) */
@@ -97,15 +94,12 @@ static Key keys[] = {
 	{ MODKEY,                       XK_period, focusmon,       {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
-        { MODKEY,                       XK_0,      view,           {.ui = ~0 } },
+	{ MODKEY,                       XK_0,      view,           {.ui = ~0 } },
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)
 	TAGKEYS(                        XK_4,                      3)
-	TAGKEYS(                        XK_5,                      4)
-	TAGKEYS(                        XK_6,                      5)
-	TAGKEYS(                        XK_7,                      6)
-	TAGKEYS(                        XK_8,                      7)
+	TAGKEYS(                        XK_8,                      4)
 };
 
 /* button definitions */

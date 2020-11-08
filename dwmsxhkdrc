@@ -4,9 +4,9 @@
 super + Return
         st
 super + e
-        st -e lf
+        st -e ranger
 super + ctrl + n
-        st -g 84x32 -e newsboat
+        st -e newsboat
 super + shift + {n, p, a, v, c, e}
         st -e {ncmpcpp, python, alsamixer, vit, calcurse, neomutt}
 super + alt + w
@@ -78,15 +78,19 @@ super + {ctrl, alt, shift} + m
 
 # brightness
 super + Page_Up
-        brightnessctl set 3%+ && notify-send "Brightness up"
+        sudo brightnessctl set 3%+ && notify-send "Brightness up" -t 200
 super + Page_Down
-        brightnessctl set 3%- && notify-send "Brightness down"
+        sudo brightnessctl set 3%- && notify-send "Brightness down" -t 200
 
 # colorpicker
 super + alt + c
         pickcolor
 
+# dmenu apps
 super + ctrl + p
         passmenu
+super + ctrl + b
+        clipmenu
 
-#vim:ft=config 
+
+#vim:ft=config
