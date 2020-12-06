@@ -4,7 +4,7 @@
 super + Return
         st
 super + e
-        st -e ranger
+        st -e lf
 super + ctrl + n
         st -e newsboat
 super + shift + {n, p, a, v, c, e}
@@ -62,7 +62,7 @@ super + shift + s
 
 # emojis and fontawesome
 super + {ctrl, alt} + e
-        {emojiselect, fontawesomeselect}
+        {emojiselect, st -e nvim $HOME/.config/fontawesomelist}
 
 # create a QR code out of the text in the clipboard
 super + ctrl + q
@@ -74,7 +74,7 @@ super + ctrl + c
 
 # mounting and display change scripts
 super + {ctrl, alt, shift} + m
-        {lukedmenuselect, monsselect, mountscript}
+        {displayselect, monsselect, mountscript}
 
 # brightness
 super + Page_Up
