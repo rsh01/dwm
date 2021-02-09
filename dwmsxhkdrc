@@ -13,6 +13,8 @@ super + alt + w
         st -e sudo wifi-menu
 super + ctrl + h
         st -e htop
+super + ctrl + k
+        keepassxc
 
 # web browser and bookmarks
 super + w
