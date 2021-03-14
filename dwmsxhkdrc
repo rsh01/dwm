@@ -26,7 +26,7 @@ super + ctrl + t
 
 # dictionary
 super + {ctrl, alt} + d
-        {dictnotify, urbandict}
+        {tuxidmenu, urbandict}
 
 ### scripts/control
 
