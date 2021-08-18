@@ -1,27 +1,54 @@
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
-static const unsigned int borderpx  = 2;        /* border pixel of windows */
-static const unsigned int gappx     = 0;        /* gaps between windows */
-static const unsigned int snap      = 32;       /* snap pixel */
+static const unsigned int borderpx  = 0;        /* border pixel of windows */
+static const unsigned int gappx     = 15;        /* gaps between windows */
+static const unsigned int snap      = 0;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const char *fonts[]          = {
-        /* "Iosevka:pixelsize=15:antialias=true:autohint=true", */
-        /* "VictorMono:style=semibold:pixelsize=14:antialias=true:autohint=true", */
-        /* "Fantasque Sans Mono:pixelsize=16:antialias=true:autohint=true", */
-        "Terminus (TTF):pixelsize=16:antialias=true:autohint=true",
+        "Fira Code Retina:size=12:antialias=true:autohint=true",
+        /* "Product Sans:size=13:antialias=true:autohint=true", */
+        "Stick:size=12",
+        "Material Design Icons:size=12",
         "JoyPixels:pixelsize=10:antialias=true:autohint=true",
         "FontAwesome:size=10",
 };
+
 static const char dmenufont[]       = "monospace:size=10";
-static const char col_gray1[]       = "#000000";
+
+/* Gruvbox */
+/* static const char col_gray1[]       = "#1D1D1B"; */
+/* static const char col_gray2[]       = "#444444"; */
+/* static const char col_gray3[]       = "#ffffff"; */
+/* static const char col_border[]      = "#83A598"; */
+/* static const char col_gray4[]       = "#000000"; */
+/* static const char col_cyan[]        = "#83A598"; */
+
+/* Gruvbox Light */
+/* static const char col_gray1[]       = "#EADAB1"; */
+/* static const char col_gray2[]       = "#444444"; */
+/* static const char col_gray3[]       = "#000000"; */
+/* static const char col_border[]      = "#FA4833"; */
+/* static const char col_gray4[]       = "#000000"; */
+/* static const char col_cyan[]        = "#F2E5BC"; */
+
+/* Monochrome */
+static const char col_gray1[]       = "#171A1F";
 static const char col_gray2[]       = "#444444";
 static const char col_gray3[]       = "#ffffff";
-static const char col_border[]      = "#41D12A";
-/* static const char col_gray4[]       = "#eeeeee"; */
+static const char col_border[]      = "#ffffff";
 static const char col_gray4[]       = "#ffffff";
-static const char col_cyan[]        = "#620A57";
+static const char col_cyan[]        = "#303337";
+
+/* Nord */
+/* static const char col_gray1[]       = "#3B4252"; */
+/* static const char col_gray2[]       = "#444444"; */
+/* static const char col_gray3[]       = "#ffffff"; */
+/* static const char col_border[]      = "#EBCB8B"; */
+/* static const char col_gray4[]       = "#000000"; */
+/* static const char col_cyan[]        = "#81A1C1"; */
+
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
@@ -29,8 +56,9 @@ static const char *colors[][3]      = {
 };
 
 /* tagging */
-/* static const char *tags[] = { "α", "β", "γ", "δ", "ε", "ζ", "η", "θ", "ι" }; */
-static const char *tags[] = { "Γ", "Δ", "Θ", "Λ", "Ξ", "Π", "Σ", "Φ", "Ψ" };
+static const char *tags[] = { "α", "β", "γ", "δ", "ε", "ζ", "η", "θ", "ι" };
+/* static const char *tags[] = { "Γ", "Δ", "Θ", "Λ", "Ξ", "Π", "Σ", "Φ", "Ψ" }; */
+/* static const char *tags[] = { "一", "二", "三", "四", "五", "六", "七", "八", "九" }; */
 /* static const char *tags[] = { "", "", "", "", "" }; */
 
 static const Rule rules[] = {
@@ -39,14 +67,14 @@ static const Rule rules[] = {
 	 *	WM_NAME(STRING) = title
 	 */
 	/* class      instance    title         tags mask     iscentered     isfloating   monitor */
-	{ "Gimp",     NULL,       NULL,         0,            0,             1,           -1 },
-	{ "Firefox",  NULL,       NULL,         1 << 2,       0,             0,           -1 },
 	{ "Sxiv",     "sxiv",     "sxiv",       0,            1,             1,           -1 },
-	{ "St",       "st",       "alsamixer",  0,            1,             1,           -1 },
-	{ "St",       "st",       "vit",        0,            1,             1,           -1 },
-	{ "St",       "st",       "python",     0,            1,             1,           -1 },
-	{ "St",       "st",       "ncmpcpp",    0,            1,             1,           -1 },
-	{ "St",       "st",       "calcurse",   0,            1,             1,           -1 },
+	{ "Gcolor2",  "gcolor2",  "gcolor2",    0,            1,             1,           -1 },
+	{ "Alacritty","Alacritty","alsamixer",  0,            1,             1,           -1 },
+	{ "Alacritty","Alacritty","vit",        0,            1,             1,           -1 },
+	{ "Alacritty","Alacritty","python",     0,            1,             1,           -1 },
+	{ "Alacritty","Alacritty","ncmpcpp",    0,            1,             1,           -1 },
+	{ "Alacritty","Alacritty","calcurse",   0,            1,             1,           -1 },
+	{ "Alacritty","Alacritty","vimwiki_d",  0,            1,             1,           -1 },
 	{ "Display",  "display",  NULL,         0,            1,             1,           -1 },
 	{ "Pcmanfm",  "pcmanfm",  NULL,         0,            1,             1,           -1 },
 	{ "mpv",      NULL,       NULL,         0,            0,             1,           -1 },
@@ -94,6 +122,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_q,      killclient,     {0} },
 	{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },
 	{ MODKEY,                       XK_f,      setlayout,      {.v = &layouts[1]} },
+ 	{ MODKEY|ShiftMask,             XK_f,      togglefullscr,  {0} },
 	{ MODKEY,                       XK_m,      setlayout,      {.v = &layouts[2]} },
 	{ MODKEY|ShiftMask,             XK_space,  togglefloating, {0} },
 	{ MODKEY,                       XK_Insert, view,           {.ui = ~0 } },

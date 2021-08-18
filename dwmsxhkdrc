@@ -2,23 +2,41 @@
 
 # terminal and terminal apps
 super + Return
-        st
+        $TERMINAL
 super + e
-        st -e lf
+        $TERMINAL -t floatlf -e lfrun
 super + ctrl + n
-        st -e newsboat
-super + shift + {n, p, a, v, c, e}
-        st -e {ncmpcpp, python, alsamixer, vit, calcurse, neomutt}
+        $TERMINAL -e newsboat
+super + shift + {n, p, a, v, e}
+        $TERMINAL {-t ncmpcpp -e ncmpcpp, -t python -e python, -t alsamixer -e alsamixer, -t vit -e vit, -e neomutt}
 super + alt + w
-        st -e sudo wifi-menu
+        $TERMINAL -e sudo nmtui
 super + ctrl + h
-        st -e htop
+        $TERMINAL -e htop
+super + ctrl + alt + c
+        gcolor2
+
+# matrix and signal
+super + g
+        $TERMINAL -e gomuks
+super + ctrl + s
+        signal-desktop
+
+# keepassxc
 super + ctrl + k
         keepassxc
 
-# web browser and bookmarks
+# vimwiki
 super + w
         webdmenu
+
+# vimwiki
+super + v
+        $TERMINAL -e nvim ~/.local/share/vimwiki/index.wiki
+super + ctrl + j
+        $TERMINAL -t vimwiki_d -e nvim -c "VimwikiMakeDiaryNote"
+super + shift + b
+        wikiaddbook
 
 # telegram
 super + ctrl + t
@@ -26,7 +44,7 @@ super + ctrl + t
 
 # dictionary
 super + {ctrl, alt} + d
-        {tuxidmenu, urbandict}
+        {dictnotify, urbandict}
 
 ### scripts/control
 
@@ -61,10 +79,12 @@ super + {shift, ctrl} + w
 # screenshot
 super + shift + s
         screenshot
+super + alt + s
+        lastscrot
 
 # emojis and fontawesome
 super + {ctrl, alt} + e
-        {emojiselect, st -e nvim $HOME/.config/fontawesomelist}
+        {emojiselect, $TERMINAL -e nvim $HOME/.config/fontawesomelist}
 
 # create a QR code out of the text in the clipboard
 super + ctrl + q
